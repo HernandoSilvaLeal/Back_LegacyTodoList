@@ -5,11 +5,10 @@ const PORT = 3030;
 const app = express();
 
 const todoRoutes = require("./routes/todoRoutes");
-const connectionOptions = { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false };
 
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://Valentina:1234@bootcamp.npjeo.mongodb.net/todolist?retryWrites=true&w=majority/authSource=admin", connectionOptions)
+mongoose.connect("mongodb+srv://Valentina:1234@bootcamp.npjeo.mongodb.net/todolist?retryWrites=true&w=majority/authSource=admin")
     .then(() => console.log("Connected successfully"))
     .catch((err) => console.error(err));
 
